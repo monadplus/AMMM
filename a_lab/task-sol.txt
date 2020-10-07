@@ -1,0 +1,17 @@
+a) Explain the model
+b) Why z is guaranteed to be equal to the load of the highest loaded computer?
+
+The model is very simple except for z which is explained below.
+
+It is guaranteed because z must be at least the maximum of x_tc and because it is a minimization problem, so z is at most the maximum of x_tc. Hence, z = maximum of x_tc.
+
+c) Implement the model in OPL and solve it using CPLEX
+d) Write a processing block to check whether the load requested by all the tasks can be served by the computers
+e) Implement the model (second implementation) in OPL and solve it using CPLEX
+
+See `monitor` directory.
+
+f) Analyze the computer's processing capacity and indicate whether is possible to reduce it.
+
+The capicity of all processors is at 0.723773179127243.
+Hence, we could reduce the processors capacity by (1-0.723773179127243).

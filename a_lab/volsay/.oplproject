@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ASCII"?><project>
+	<version>1.0</version>
+	<configs>
+		<config default="true" name="run_volsay1" category="opl">
+			<ref name="volsay1.mod" type="model">
+			</ref>
+		</config>
+		<config default="false" name="volsay2" category="opl">
+			<ref name="volsay2.mod" type="model">
+			</ref>
+		</config>
+		<config default="false" name="volsay3" category="opl">
+			<ref name="volsay3.mod" type="model">
+			</ref>
+			<ref name="volsay3a.dat" type="data">
+			</ref>
+		</config>
+		<config default="false" name="volsay3b" category="opl">
+			<ref name="volsay3.mod" type="model">
+			</ref>
+			<ref name="volsay3b.dat" type="data">
+			</ref>
+		</config>
+		<config default="false" name="volsay4" category="opl">
+			<ref name="volsay4.mod" type="model">
+			</ref>
+			<ref name="volsay3a.dat" type="data">
+			</ref>
+		</config>
+		<config default="false" name="volsay5" category="opl">
+			<ref name="volsay5.mod" type="model">
+			</ref>
+		</config>
+		<config default="false" name="volsay6" category="opl">
+			<ref name="volsay6.mod" type="model">
+			</ref>
+		</config>
+	</configs>
+	
+</project>
