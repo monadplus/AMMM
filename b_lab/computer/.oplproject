@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ASCII"?><project>
+	<version>1.0</version>
+	<configs>
+		<config default="false" name="computer2_dat2" category="opl">
+			<ref name="computer2.mod" type="model">
+			</ref>
+			<ref name="computer2.dat" type="data">
+			</ref>
+		</config>
+		<config default="true" name="computer2_dat1" category="opl">
+			<ref name="computer2.mod" type="model">
+			</ref>
+			<ref name="computer.dat" type="data">
+			</ref>
+		</config>
+		<config default="false" name="computer3" category="opl">
+			<ref name="computer3.mod" type="model">
+			</ref>
+			<ref name="computer2.dat" type="data">
+			</ref>
+		</config>
+		<config default="false" name="computer4" category="opl">
+			<ref name="computer4.mod" type="model">
+			</ref>
+			<ref name="computer2.dat" type="data">
+			</ref>
+		</config>
+	</configs>
+	
+</project>
