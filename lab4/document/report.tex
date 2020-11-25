@@ -1,0 +1,143 @@
+
+\documentclass[12pt, a4paper]{article}
+
+\input{preamble}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{TODO}
+\lhead{TODO}
+\rfoot{Page \thepage}
+
+\title{%
+  \vspace{-10ex}
+  \Large{Algorithmic Methods for Mathematical Models (AMMM)} \\
+  \large{Lab Session 4 - Greedy and Local Search Heuristics}
+}
+\author{%
+  Arnau Abella \\
+  \large{Universitat Polit\`ecnica de Catalunya}
+}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\vspace{5ex}
+\begin{enumerate}[label=(\alph*)]
+    %%%%%%%%% a
+    \item Prepare a pseudocode for the Greedy algorithm. Specify the greedy function.
+
+    \begin{algorithm}[H]
+      \SetAlgoLined
+      \DontPrintSemicolon
+      \SetKwInput{Input}{Input}
+      \SetKwInput{Output}{Output}
+      \Input{
+        \begin{itemize}
+            \item A set $T$ of tasks, each task $t$ requires $r_{t}$ resources
+            \item A set $C$ of computers, each computer $c$ has a capacity of $r_{c}$ resources
+        \end{itemize}
+      }
+      \Output{
+        A set $w$ of assignments, each assignment $\angles{t, c}$ associates a task $t$ with a computer $c$ \textit{s.t.} Each task $t \in T$ appears exactly once
+      }
+      $w \leftarrow \emptyset$\;
+      \ForAll{$t \in T$}{
+        $c^{min} \leftarrow q(t, w)$\;
+        \If{$q(c^{\min}) = \infty$}{
+          \Return{$INFEASIBLE$}\;
+        }\;
+        $w \leftarrow w \cup \{ \angles{t, c^{min}} \}$\;
+      }
+
+      \Return{$w$}\;
+      \caption{Greedy Algorithm}
+    \end{algorithm}
+
+    \begin{figure}[H]
+      \begin{align*}
+        &q(t,w) = \min \{ q(\angles{t, c}, w) \ | \ c \in C \}\\
+        &q(\angles{t, c}, w) =
+          \begin{cases}
+            \infty& if r_{t} > r_{c} - \sum_{t' \in w_{c}}r_{t'}  \\
+            \frac{r_{t} + \sum_{t' \in w_{c}}r_{t'}}{r_{c}} & otherwise
+          \end{cases}
+      \end{align*}
+      % \caption{Cost function}
+    \end{figure}
+
+    where $w_{c} = \{t_{i}, \ldots, t_{j} \} \subseteq T$ are the tasks assigned to computer $c$ in the partial solution $w$.
+
+    %%%%%%%%% b
+    \item Prepare a pseudocode for the Local search algorithm. What neighborhoods and exploration strategies are implemented?
+
+    The \textit{local search} is the \textit{task swapping} and the strategy is \textit{best improvement}. The \textit{python} code implements the same algorithm but also includes a \textit{first improvement} strategy.
+
+    \begin{algorithm}[H]
+      \SetAlgoLined
+      \DontPrintSemicolon
+      \SetKwInput{Input}{Input}
+      \SetKwInput{Output}{Output}
+      \Input{A set $w$ of assignments, each assignment $\angles{t, c}$ associates a task $t$ with a computer $c$
+      }
+      \Output{A set $w'$ of assignments \textit{s.t.} $q(w') \le q(w)$}
+      $w' \leftarrow w$\;
+      \While{execution time $\le$ time limit}{
+        $sC \leftarrow$ sort $w'$ by computer's load (desc)\;
+        moves $\leftarrow \emptyset$\;
+        \For(\tcc*[f]{list traversal, order matters}){$c \in sC$}{
+          \ForEach{$t \in w'_{c}$}{
+            \For{$c' \in sC \text{ s.t. } c' \le c$}{
+              \ForEach{$t' \in w'_{c'}$}{
+                $rc = r_{c} - \sum_{t'' \in w_{c}}r_{t''}$\;
+                $rc' = r_{c'} - \sum_{t'' \in w_{c'}}r_{t''}$\;
+                \If{$r_{t'} - r_{t} \le rc \land r_{t} - r_{t'} \le rc'$}{
+                  $rc_{new} = rc + r_{t} - r_{t'}$\;
+                  $rc'_{new} = rc' + r_{t'} - r_{t}$\;
+                  improvement $= \min(rc_{new}, rc'_{new})$\;
+                  \If{improvement $> 0$}{
+                    $moves \leftarrow moves \cup \{\angles{t,c,t',c',\text{ improvement}}\}$\;
+                  }
+                }
+              }
+            }
+          }
+        }
+        \If{moves $= \emptyset$}{
+          \Return{$w'$}
+        }\;
+        $\angles{t,c,t',c',\_} \leftarrow \argmax \{\angles{\_,\_,\_,\_,\text{impr}} \leftarrow \text{moves} \}$\;
+      }
+      $w' \leftarrow w' \cup (w'_{c} \setminus \{ t \} \cup \{ t' \})$\;
+      $w' \leftarrow w' \cup (w'_{c'} \setminus \{ t' \} \cup \{ t \})$\;
+      \Return{$w'$}\;
+      \caption{Local Search: Task Swapping}
+    \end{algorithm}
+   
+
+    %%%%%%%%% c
+    \item Generate instances of increasing size. Store these instances as they will be solved in the coming lab sessions.
+
+    %%%%%%%%% d
+    \item Solve the instances previously generated using
+
+      \begin{itemize}
+          \item Random only
+          \item Greedy function only
+          \item Greedy + Local search
+      \end{itemize}
+
+    Plot the quality of the solutions and time to solve. Select the best combination.
+
+    %%%%%%%%% e
+    \item Solve the instances previously generated using the ILP from lab session 2.
+    Configure CPLEX to stop after 30min or GAP $\le 1\%$.
+
+    %%%%%%%%% f
+    \item Plot the best combination for the Greedy and the ILP of quality of the solutions and time to solve.
+
+
+\end{enumerate}
+\end{document}
