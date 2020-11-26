@@ -1,0 +1,90 @@
+-------- Problem: cpu 10 tasks 30
+Time: 0.06s
+
+CPU 1 loaded at 0.483938801
+CPU 2 loaded at 0.410988458
+CPU 3 loaded at 0.532826052
+Total load 88990.402173062
+Total capacity 100000
+Can request load be processed? Yes
+Max load 0.889904022
+
+-------- Problem: cpu 20 tasks 40
+Time: 0.06s
+
+Total load 117396.613243709
+Total capacity 248863.95864877
+Can request load be processed? Yes
+Max load 0.471730072%
+
+-------- Problem: cpu 50 tasks  150
+Time: 0.13s
+
+Total load 415972.227156595
+Total capacity 629407.573672814
+Can request load be processed? Yes
+Max load 0.660894855%
+
+-------- Problem: cpu 100 tasks 300
+Time: 0.68s
+
+Total load 812418.194578429
+Total capacity 1000000
+Can request load be processed? Yes
+Max load 0.812418195%
+
+-------- Problem: cpu 150 tasks 300
+Time: 0.88s
+
+Total load 1086416.139648196
+Total capacity 1787804.698035708
+Can request load be processed? Yes
+Max load 0.607681667%
+
+-------- Problem: cpu 250 tasks 500
+Time: 1.66s
+
+Total load 1327299.899753192
+Total capacity 3001210.308437403
+Can request load be processed? Yes
+Max load 0.442254878%
+
+-------- Problem: cpu 400  tasks 900
+Time: 6.04s
+
+Total load 2488594.413202042
+Total capacity 4953041.325067412
+Can request load be processed? Yes
+Max load 0.502437644%
+
+-------- Problem: cpu 450 tasks 1200
+Time: 10.59
+
+Total load 3278995.622850114
+Total capacity 5648727.993789369
+Can request load be processed? Yes
+Max load 0.580483894%
+
+-------- Problem: cpu 500 tasks 1500
+Time: 17.18s
+
+Total load 4057678.301408276
+Total capacity 6188768.566452986
+Can request load be processed? Yes
+Max load 0.65565197%
+
+-------- Problem: cpu 750 tasks 2500
+Time: 1' 6s
+
+Total load 6974966.426510921
+Total capacity 9332806.103563132
+Can request load be processed? Yes
+Max load 0.747360049%
+
+-------- Problem: cpu 1000 tasks 3000
+Time: 2' 21s
+
+Total load 8179162.593216134
+Total capacity 12292957.519196963
+Can request load be processed? Yes
+Max load 0.665353523%

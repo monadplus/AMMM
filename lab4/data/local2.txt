@@ -1,0 +1,64 @@
+Greedy + Local Search
+Best Improvement
+
+-------- Problem: cpu 10 tasks 30
+
+Elap. Time (s)   Obj. Value     Iterations
+    0.00000238          inf              0
+    0.11114168   0.90424444              1
+Evaluation Performance:
+  Num. solutions constructed 1
+  Total Eval. Time      0.11113214492797852 s
+  Avg. Time / solution 111.13214492797852 ms
+
+-------- Problem: cpu 20 tasks 40
+
+Elap. Time (s)   Obj. Value     Iterations
+    0.00000215          inf              0
+    0.71887374   0.48881969              1
+Evaluation Performance:
+  Num. solutions constructed 1
+  Total Eval. Time      0.7188706398010254 s
+  Avg. Time / solution 718.8706398010254 ms
+
+-------- Problem: cpu 50 tasks  150
+
+Elap. Time (s)   Obj. Value     Iterations
+    0.00000262          inf              0
+   88.79351473   0.66626004              1
+Evaluation Performance:
+  Num. solutions constructed 1
+  Total Eval. Time      88.79351162910461 s
+  Avg. Time / solution 88793.51162910461 ms
+
+-------- Problem: cpu 100 tasks 300
+
+Elap. Time (s)   Obj. Value     Iterations
+    0.00000262          inf              0
+  301.55828571   0.86151157              1
+Evaluation Performance:
+  Num. solutions constructed 1
+  Total Eval. Time      301.55828285217285 s
+  Avg. Time / solution 301558.28285217285 ms
+
+-------- Problem: cpu 150 tasks 300
+
+Elap. Time (s)   Obj. Value     Iterations
+    0.00000215          inf              0
+  304.49065328   0.62692967              1
+Evaluation Performance:
+  Num. solutions constructed 1
+  Total Eval. Time      304.4906497001648 s
+  Avg. Time / solution 304490.6497001648 ms
+
+-------- Problem: cpu 250 tasks 500
+
+-------- Problem: cpu 400  tasks 900
+
+-------- Problem: cpu 450 tasks 1200
+
+-------- Problem: cpu 500 tasks 1500
+
+-------- Problem: cpu 750 tasks 2500
+
+-------- Problem: cpu 1000 tasks 3000

@@ -6,13 +6,13 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\rhead{TODO}
-\lhead{TODO}
+\rhead{Arnau Abella}
+\lhead{AMMM}
 \rfoot{Page \thepage}
 
 \title{%
   \vspace{-10ex}
-  \Large{Algorithmic Methods for Mathematical Models (AMMM)} \\
+  \Large{Algorithmic Methods for Mathematical Models} \\
   \large{Lab Session 4 - Greedy and Local Search Heuristics}
 }
 \author{%
@@ -27,7 +27,7 @@
 \vspace{5ex}
 \begin{enumerate}[label=(\alph*)]
     %%%%%%%%% a
-    \item Prepare a pseudocode for the Greedy algorithm. Specify the greedy function.
+    \item[\textcolor{QuestionBlue}{\textbullet}] \textcolor{QuestionBlue}{Prepare a pseudocode for the Greedy algorithm. Specify the greedy function.}
 
     \begin{algorithm}[H]
       \SetAlgoLined
@@ -71,9 +71,9 @@
     where $w_{c} = \{t_{i}, \ldots, t_{j} \} \subseteq T$ are the tasks assigned to computer $c$ in the partial solution $w$.
 
     %%%%%%%%% b
-    \item Prepare a pseudocode for the Local search algorithm. What neighborhoods and exploration strategies are implemented?
-
-    The \textit{local search} is the \textit{task swapping} and the strategy is \textit{best improvement}. The \textit{python} code implements the same algorithm but also includes a \textit{first improvement} strategy.
+    \item[\textcolor{QuestionBlue}{\textbullet}] \textcolor{QuestionBlue}{
+      Prepare a pseudocode for the Local search algorithm. What neighborhoods and exploration strategies are implemented?
+    }
 
     \begin{algorithm}[H]
       \SetAlgoLined
@@ -115,29 +115,63 @@
       \Return{$w'$}\;
       \caption{Local Search: Task Swapping}
     \end{algorithm}
-   
+
+    The \textit{local search} uses a \textit{task swapping} algorithm and the strategy performed is \textit{best improvement}. The \textit{python} code implements the same algorithm but also includes a \textit{first improvement} strategy.
 
     %%%%%%%%% c
-    \item Generate instances of increasing size. Store these instances as they will be solved in the coming lab sessions.
+    \item[\textcolor{QuestionBlue}{\textbullet}] \textcolor{QuestionBlue}{
+      Generate instances of increasing size. Store these instances as they will be solved in the coming lab sessions.
+    }
 
     %%%%%%%%% d
-    \item Solve the instances previously generated using
+    \item[\textcolor{QuestionBlue}{\textbullet}]{\color{QuestionBlue}
+      Solve the instances previously generated using
 
-      \begin{itemize}
-          \item Random only
-          \item Greedy function only
-          \item Greedy + Local search
-      \end{itemize}
+        \begin{itemize}
+            \item Random only
+            \item Greedy function only
+            \item Greedy + Local search
+        \end{itemize}
 
-    Plot the quality of the solutions and time to solve. Select the best combination.
+      Plot the quality of the solutions and time to solve. Select the best combination.
+    }
+
+    The \textit{randomized} version can be discarded because of the quality of the solutions (figure \ref{fig:greedy}).
+    The \textit{greedy with local search (best improvement)} can be discarded because of the execution time, see figure \ref{fig:greedy}, which grows so fast that I couldn't even manage to run the smallest instances without hitting the soft time limit of the program.
+    Between the \textit{greedy without local search} algorithm and the \textit{greedy with local search (first improvement)} it is more disputed.
+    The version with local search always returns better solutions but the execution time grows some order of magnitudes faster.
+
+    So, from the collected data, I would recommend using the \textit{greedy with local search (first improvement)} algorithm for small instances where the execution time is feasible and the \textit{greedy without local search} algorithm for big instances.
 
     %%%%%%%%% e
     \item Solve the instances previously generated using the ILP from lab session 2.
     Configure CPLEX to stop after 30min or GAP $\le 1\%$.
 
-    %%%%%%%%% f
-    \item Plot the best combination for the Greedy and the ILP of quality of the solutions and time to solve.
+    \item[\textcolor{QuestionBlue}{\textbullet}] \textcolor{QuestionBlue}{
+      Solve the instances previously generated using the ILP from lab session 2.
+      Configure CPLEX to stop after 30min or GAP $\le 1\%$.
+    }
 
+    %%%%%%%%% f
+    \item[\textcolor{QuestionBlue}{\textbullet}] \textcolor{QuestionBlue}{Plot the best combination for the Greedy and the ILP of quality of the solutions and time to solve.}
+
+    The \textit{ILP} version performs better in both speed and solution's quality, see figure \ref{fig:ilp}. Although, this comparison is not fair at all,
+    the greedy algorithm is executing non-optimized \textit{python} code which is per se 10-100x orders of magnitude slower than \textit{C} while the ILP version is executing
+    highly-optimized \textit{C} code.
+
+    \begin{figure}[H]
+      \includegraphics[width=\textwidth]{greedy_execution_time}
+      \includegraphics[width=\textwidth]{greedy_solution_quality}
+      \caption{Comparison between the \textit{greedy algorithms}}
+      \label{fig:greedy}
+    \end{figure}
+
+    \begin{figure}[H]
+      \includegraphics[width=\textwidth]{ilp_execution_time}
+      \includegraphics[width=\textwidth]{ilp_solution_quality}
+      \caption{Comparison between the \textit{Greedy} and the \textit{ILP} algorithm}
+      \label{fig:ilp}
+    \end{figure}
 
 \end{enumerate}
 \end{document}

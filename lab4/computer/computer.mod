@@ -4,8 +4,8 @@ int nCPUs = ...;
 range Tasks = 1..nTasks;
 range CPUs  = 1..nCPUs;
 
-float r_t[Tasks] = ...;
-float r_c[CPUs]  = ...;
+float rt[Tasks] = ...;
+float rc[CPUs]  = ...;
 
 // Percentage of resources requested by task t that are served to computer c.
 dvar float+ x_tc[Tasks][CPUs];
@@ -17,9 +17,9 @@ execute {
   var cpuCapacity = 0;
 
   for (var t=1;t<=nTasks;t++)
-    totalLoad += r_t[t];
+    totalLoad += rt[t];
   for (var c=1;c<=nCPUs;c++)
-    cpuCapacity += r_c[c];
+    cpuCapacity += rc[c];
 
   var can_process = "Yes";
   if (totalLoad > cpuCapacity) can_process = "No";
@@ -34,13 +34,13 @@ minimize z;
 subject to {
 
   forall(c in CPUs)
-    (1/r_c[c]) * (sum(t in Tasks) r_t[t] * x_tc[t][c]) <= z;
+    (1/rc[c]) * (sum(t in Tasks) rt[t] * x_tc[t][c]) <= z;
 
   forall(t in Tasks)
     sum(c in CPUs) x_tc[t][c] == 1;
 
   forall(c in CPUs)
-    sum(t in Tasks) x_tc[t][c] * r_t[t] <= r_c[c];
+    sum(t in Tasks) x_tc[t][c] * rt[t] <= rc[c];
 }
 
 execute {
@@ -48,7 +48,7 @@ execute {
     var load=0;
     for (var t=1;t<=nTasks;t++)
       load+=(r_t[t]*x_tc[t][c]);
-    load = (1/r_c[c])*load;
+    load = (1/rc[c])*load;
     writeln("CPU " + c + " loaded at " + load + "%");
   }
 };
