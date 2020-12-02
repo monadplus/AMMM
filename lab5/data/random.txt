@@ -1,0 +1,95 @@
+Random
+
+-------- Problem: cpu 10 tasks 30
+
+Elap. Time (s)   Obj. Value     Iterations
+    0.00000215          inf              0
+    0.00257349   0.99985157              1
+Evaluation Performance:
+  Num. solutions constructed 1
+  Total Eval. Time      0.0025682449340820312 s
+  Avg. Time / solution 2.5682449340820312 ms
+
+-------- Problem: cpu 20 tasks 40
+
+Elap. Time (s)   Obj. Value     Iterations
+    0.00000191          inf              0
+    0.01470447   0.97693134              1
+Evaluation Performance:
+  Num. solutions constructed 1
+  Total Eval. Time      0.014701366424560547 s
+  Avg. Time / solution 14.701366424560547 ms
+
+-------- Problem: cpu 50 tasks  150
+
+Elap. Time (s)   Obj. Value     Iterations
+    0.00000191          inf              0
+    0.25153780   0.99947642              1
+Evaluation Performance:
+  Num. solutions constructed 1
+  Total Eval. Time      0.25153064727783203 s
+  Avg. Time / solution 251.53064727783203 ms
+
+-------- Problem: cpu 100 tasks 300
+
+Elap. Time (s)   Obj. Value     Iterations
+    0.00000191          inf              0
+    1.73252988   0.99834461              1
+Evaluation Performance:
+  Num. solutions constructed 1
+  Total Eval. Time      1.7325236797332764 s
+  Avg. Time / solution 1732.5236797332764 ms
+
+-------- Problem: cpu 150 tasks 300
+
+Elap. Time (s)   Obj. Value     Iterations
+    0.00000262          inf              0
+    6.38972187   0.99979224              1
+Evaluation Performance:
+  Num. solutions constructed 1
+  Total Eval. Time      6.389718532562256 s
+  Avg. Time / solution 6389.718532562256 ms
+
+-------- Problem: cpu 250 tasks 500
+
+Elap. Time (s)   Obj. Value     Iterations
+    0.00000501          inf              0
+   24.10170603   0.99131557              1
+Evaluation Performance:
+  Num. solutions constructed 1
+  Total Eval. Time      24.101701974868774 s
+  Avg. Time / solution 24101.701974868774 ms
+
+-------- Problem: cpu 400  tasks 900
+
+Elap. Time (s)   Obj. Value     Iterations
+    0.00000501          inf              0
+   99.56205678   0.99853077              1
+Evaluation Performance:
+  Num. solutions constructed 1
+  Total Eval. Time      99.56205296516418 s
+  Avg. Time / solution 99562.05296516418 ms
+
+-------- Problem: cpu 450 tasks 1200
+
+Elap. Time (s)   Obj. Value     Iterations
+    0.00000548          inf              0
+  154.65148664   0.99985548              1
+Evaluation Performance:
+  Num. solutions constructed 1
+  Total Eval. Time      154.65148329734802 s
+  Avg. Time / solution 154651.48329734802 ms
+
+-------- Problem: cpu 500 tasks 1500
+
+Elap. Time (s)   Obj. Value     Iterations
+    0.00001240          inf              0
+  241.47930098   0.99984547              1
+Evaluation Performance:
+  Num. solutions constructed 1
+  Total Eval. Time      241.47929787635803 s
+  Avg. Time / solution 241479.29787635803 ms
+
+-------- Problem: cpu 750 tasks 2500
+
+-------- Problem: cpu 1000 tasks 3000

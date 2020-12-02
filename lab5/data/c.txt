@@ -1,0 +1,77 @@
+alpha = 0.5
+
+=================== Constructive Only ===========================
+
+-------- Problem: cpu 10 tasks 30 (limit 60)
+
+Elap. Time (s)   Obj. Value     Iterations
+   60.00147319   0.91584881          21313
+Avg. Time / solution 2.815252242416978 ms
+
+-------- Problem: cpu 20 tasks 40 (limit 60)
+
+Elap. Time (s)   Obj. Value     Iterations
+   60.01072288   0.51832366           4024
+Avg. Time / solution 14.913201035846535 ms
+
+-------- Problem: cpu 50 tasks  150 (limit 60)
+
+Elap. Time (s)   Obj. Value     Iterations
+   60.24721289   0.68119419            227
+Avg. Time / solution 265.40621576855364 ms
+
+-------- Problem: cpu 100 tasks 300 (limit 60)
+
+Elap. Time (s)   Obj. Value     Iterations
+   62.11427927   0.87624716             28
+Avg. Time / solution 2218.3670231274195 ms
+
+-------- Problem: cpu 150 tasks 300 (limit 300)
+
+Elap. Time (s)   Obj. Value     Iterations
+    302.38588595   0.62728014             47
+Avg. Time / solution 6433.742193465538 ms
+
+-------- Problem: cpu 250 tasks 500 (limit 60)
+
+Elap. Time (s)   Obj. Value     Iterations
+   81.07603669   0.46848907              3
+Avg. Time / solution 27025.344530741375 ms
+
+=================== Constructive + LS ===========================
+
+-------- Problem: cpu 10 tasks 30 (limit 60)
+
+Elap. Time (s)   Obj. Value     Iterations
+   60.00033689   0.89377658           4335
+Avg. Time / solution 13.84090755775038 ms
+
+-------- Problem: cpu 20 tasks 40 (limit 60)
+
+Elap. Time (s)   Obj. Value     Iterations
+   60.00062561   0.49745062            370
+Avg. Time / solution 162.16384462408118 ms
+
+-------- Problem: cpu 50 tasks  150 (limit 60)
+
+Elap. Time (s)   Obj. Value     Iterations
+   60.00504065   0.66462005             10
+Avg. Time / solution 6000.50368309021 ms
+
+-------- Problem: cpu 100 tasks 300 (limit 60)
+
+Elap. Time (s)   Obj. Value     Iterations
+   60.00560832   0.81705658              3
+Avg. Time / solution 20001.86824798584 ms
+
+-------- Problem: cpu 150 tasks 300 (limit 60)
+
+Elap. Time (s)   Obj. Value     Iterations
+   60.00510192   0.61022804              2
+Avg. Time / solution 30002.549171447754 ms
+
+-------- Problem: cpu 250 tasks 500 (limit 300s)
+
+Elap. Time (s)   Obj. Value     Iterations
+  300.02039266   0.45066987              2
+Avg. Time / solution 150010.1945400238 ms
