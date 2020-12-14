@@ -1,0 +1,61 @@
+
+\documentclass[12pt, a4paper]{article}
+
+\input{preamble}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{UPC - FIB}
+\lhead{AMMM}
+\rfoot{Page \thepage}
+
+\title{%
+  \vspace{-10ex}
+  AMMM Project\\
+  \large{Questions \& Answers}
+}
+\author{%
+  Arnau Abella \\
+  Andrea de las Heras \\
+  \large{Universitat Polit\`ecnica de Catalunya}
+}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\vspace{5ex}
+
+\begin{enumerate}[label=\textbf{(\alph*)}]
+  \item \textbf{Did you test the GRASP for different alpha values? If so, was there any significant difference in the output?}
+
+  We did test all possible combinations of alpha values for each problem as the total number of combinations was small. Otherwise we could have used some analytic technique to avoid the factorial problem such as the Yates analysis.
+
+  Regarding to the second question, the difference was significant, in some case we reached $10\%$ of improvement. Values in the interval $0.3 \leq \alpha \leq 0.5$ tend to work better with respect to the time and the quality of the solutions but it depends a lot on the problem.
+
+\item \textbf{How did you generate instances with that many cities that CPLEX could not slve in a reasonable time?}
+
+  Before answering your question, let me comment that the complexity of this problem is not only related to the number of cities but also how hard is to find feasible solutions for that particular problem. During our experiments, we have observed that instances of half the size of other instances, were $n$ times harder to solve. Regarding to your question, the instance generator uses randomization based on Marsaglia's MWC256 algorithm and adds some constraints to the generated instances to make them feasible but at the same time hard to solve with high probability. The code is publicly available at \url{https://github.com/monadplus/AMMM-project/tree/main/heuristics}.
+
+\item \textbf{At the comparative results, what local search policy have you used to obtain the values? And why the scalability of local search is the same as the greedy?}
+
+  Regarding to the first question, the policy used on the local search was \textit{first improvement} because the computational resources invested on the \textit{best improvement} did not pay off with respect to the quality of the solutions. We are aware that our local search procedure has some limitations and it is not exploring the whole solution space because some strategies are missing such as swapping locations of facility centers or swapping cities between facilities but this is left as an exercise for future work.
+
+    Regarding to the second question [insert Andrea's answer]
+
+\item \textbf{Is it worth using a purely functional programming language to solve the heuristics and meta-heuristics problems?}
+
+  Short answer: no.
+
+  Haskell shines by its \textit{type-safety} i.e. the ability to encode constraints on the code that are checked on compile time, its \textit{managed side-effects} i.e. side-effects must be reflected on the type signatures and its memory model based on managed memory by a garbage collector, \ldots all these features come at the expenses of performance. There is always a trade-off and whether to choose a language or not depends on the type of the project you are working on. Haskell's most mature fields are compilers, web programming and command-line applications. It is still immature for data science, numerical programming, computer vision, \ldots and not suitable for system and embedded programming.
+
+    The heuristic project was small, the algorithms used are simple and most of the work is related to numerical computations \i.e. operations on vector of bytes. Haskell does not bring any advantage on this kind of projects and adds a considerable overhead with respect to a low-level implementation in \textit{C/C++/Rust}. It is true that you can achieve similar performance to \textit{C} by using advanced techniques but it requires a lot of experience on the language. We could have implemented fancy invariants on the type-level such as checking on compile-time the constraints of the problems but that would required a lot of time and experimentation.
+
+\item \textbf{In the linear model, I think you did not mention any constraint on the number of centers types installed at a given location. Did you implement this constraint in the OPL model? Ifn ot, how do the solutions look without imposing this constraint?}
+
+  [Insert andrea's answer]
+
+\end{enumerate}
+
+\end{document}
