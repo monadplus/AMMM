@@ -1,0 +1,53 @@
+Nejada Karriqi: did you test GRASP for different alpha values? if yes,
+was there any significant difference on the output?
+
+ANSWER:
+
+................................................................
+
+Lorién López Villellas: How did you generate instances with that many
+cities that CPLEX could solve in a reasonable time?
+
+ANSWER:
+
+................................................................
+
+Suraj Shirvankar: What were the other parameters like city and
+locations?
+
+ANSWER:
+
+................................................................
+
+Andrea Querol De Porras: at the comparative results, what local search
+policy have you used to obtain the values? and why the scalability of
+local search is the same as the greedy?
+
+ANSWER:
+
+................................................................
+
+Aleix Dalmau I Amezua: Is it worth to use a purely functional
+programming language to solve the heuristic and meta-heuristic
+problems?
+
+ANSWER:
+
+................................................................
+
+Guillem Pérez Delgado: This is a question for Arnau and Andrea from
+the previous presentation: In the linear model I think you did not
+mention any constraint on the number of center types installed at a
+given location. Did you implement this constraint in the OPL model, if
+not how do the solutions look without imposing this constraint?
+
+ANSWER:
+
+................................................................
+
+Luis Velasco: It was not clear to me how you assign the primary and
+the secondary center in the greedy algorithm
+
+ANSWER:
+
+................................................................
